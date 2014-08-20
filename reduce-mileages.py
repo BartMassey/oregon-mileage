@@ -1,4 +1,8 @@
 # Copyright © 2014 Bart Massey
+# [This work is licensed under the "MIT License"]
+# Please see the file COPYING in the source
+# distribution of this software for license terms.
+
 # Given a mileage list, reduce it to a minimal set of edges
 # that imply the same mileages.
 
