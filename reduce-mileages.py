@@ -37,9 +37,13 @@ def reduced(g):
             e2 = tuple({v, v2})
             if e1 not in es or e2 not in es:
                 continue
-            if es[e1] + es[e2] != es[e]:
-                print("triangle error: %s %s %s" % (v1, v, v2), file=stderr)
+            if es[e1] > es[e] or es[e2] > es[e]:
                 continue
+            if es[e1] + es[e2] > es[e]:
+                continue
+            if es[e1] + es[e2] < es[e] - 10:
+                print("triangle error: %d vs %s-%d-%s-%d-%s" % \
+                      (es[e], v1, es[e1], v, es[e2], v2), file=stderr)
             print("removing redundant %s %s" % (v1, v2), file=stderr)
             del res[e]
     return (vs, res)
