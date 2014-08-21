@@ -45,9 +45,10 @@ def reduced(g):
                 continue
             if es[e1] + es[e2] > es[e]:
                 continue
-            if es[e1] + es[e2] < es[e] - 10:
+            if es[e1] + es[e2] < es[e]:
                 print("triangle error: %d vs %s-%d-%s-%d-%s" % \
                       (es[e], v1, es[e1], v, es[e2], v2), file=stderr)
+                continue
             print("removing redundant %s %s" % (v1, v2), file=stderr)
             del res[e]
     return (vs, res)
